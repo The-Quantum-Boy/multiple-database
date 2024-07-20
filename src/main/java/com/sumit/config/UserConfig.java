@@ -36,8 +36,7 @@ public class UserConfig {
 
     @Primary
     @Bean(name = "entityManagerFactory")
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory(EntityManagerFactoryBuilder builder,
-                                                                       @Qualifier("dataSource") DataSource dataSource){
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory(EntityManagerFactoryBuilder builder, @Qualifier("dataSource") DataSource dataSource){
         HashMap<String, Object> properties=new HashMap<>();
         properties.put("hibernate.hbm2ddl.auto","update");
         properties.put("hibernate.show_sql", "true");

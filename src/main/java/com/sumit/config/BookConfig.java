@@ -1,6 +1,7 @@
 package com.sumit.config;
 
 import jakarta.persistence.EntityManagerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -33,7 +34,9 @@ public class BookConfig {
     @Bean(name = "bookDataSource")
     @ConfigurationProperties(prefix = "spring.db2.datasource")
     public DataSource dataSource(){
-        return DataSourceBuilder.create().build();
+        return DataSourceBuilder
+                .create()
+                .build();
     }
 
 
